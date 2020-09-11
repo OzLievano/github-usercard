@@ -10,6 +10,7 @@ const axiosPromise = axios.get("https://api.github.com/users/OzLievano")
       .then((r)=>{
         console.log(r.data);
         myGitHub(r.data);
+
       })
 
 
@@ -37,7 +38,19 @@ const axiosPromise = axios.get("https://api.github.com/users/OzLievano")
     user, and adding that card to the DOM.
 */
 
-const followersArray = [];
+const followersArray = ["tetondan",
+  "dustinmyers",
+  "justsml",
+  "luishrd",
+  "bigknell"];
+
+followersArray.forEach(item => {
+  axios.get(`https://api.github.com/users/${item}`)
+  .then((r)=>{
+    myGitHub(r.data)
+  })
+})
+
 
 /*
   STEP 3: Create a function that accepts a single object as its only argument.
