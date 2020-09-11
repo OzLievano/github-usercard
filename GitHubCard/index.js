@@ -75,6 +75,7 @@ function myGitHub(cardObj){
   let paraClass = document.createElement('p');
   paraClass.classList.add('username');
   let para1 =document.createElement('p');
+  cardObj.location = "MIAMI";
   para1.textContent = `Location: ${cardObj.location}`;
   let para2 =document.createElement('p');
   para2.textContent = 'Profile: '
@@ -88,6 +89,15 @@ function myGitHub(cardObj){
   cardInfo.appendChild(para1)
   cardInfo.appendChild(para2)
 
+  let para3 = document.createElement('p');
+  para3.textContent =`Followers: ${cardObj.followers}`;
+  let para4 = document.createElement('p');
+  para4.textContent =`Following: ${cardObj.following}`;
+  let para5 = document.createElement('p');
+  cardObj.bio = "I am the OZ MAN 5000 - robotic progammer newbie";
+  para5.textContent =`Bio: ${cardObj.bio}`;
+
+  cardInfo.append(para3,para4,para5);
   cards.appendChild(card)
 
   return cards ;
@@ -102,4 +112,5 @@ function myGitHub(cardObj){
     justsml
     luishrd
     bigknell
+
 */
