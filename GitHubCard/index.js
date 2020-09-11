@@ -5,6 +5,12 @@ import axios from 'axios';
     https://api.github.com/users/<your name>
 */
 
+const axiosPromise = axios.get("https://api.github.com/users/OzLievano")
+      .then((r)=>{
+        console.log("sucess!",r.data);
+      })
+
+console.log(axiosPromise);
 /*
   STEP 2: Inspect and study the data coming back, this is YOUR
     github info! You will need to understand the structure of this
@@ -50,6 +56,23 @@ const followersArray = [];
       </div>
     </div>
 */
+
+function myGitHub(object){
+  let cards = document.querySelector('.cards');
+  let card = document.createElement('div');
+  card.classList.add('card');
+  let cardImage = document.createElement('img');
+  card.appendChild(cardImage);
+  let cardInfo = document.createElement('div');
+  cardInfo.classList.add('card-info');
+  card.appendChild(cardInfo);
+
+  cards.appendChild(card)
+
+  return cards ;
+}
+
+myGitHub(axiosPromise);
 
 /*
   List of LS Instructors Github username's:
