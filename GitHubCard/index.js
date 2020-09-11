@@ -70,8 +70,23 @@ function myGitHub(cardObj){
   cardInfo.classList.add('card-info');
   card.appendChild(cardInfo);
   let header3 = document.createElement('h3');
+  header3.classList.add('name');
   header3.textContent = cardObj.name;
-  cardInfo.appendChild(header3)
+  let paraClass = document.createElement('p');
+  paraClass.classList.add('username');
+  let para1 =document.createElement('p');
+  para1.textContent = `Location: ${cardObj.location}`;
+  let para2 =document.createElement('p');
+  para2.textContent = 'Profile: '
+  let a1 = document.createElement('a');
+  a1.href = cardObj.html_url;
+  a1.textContent = cardObj.html_url;
+  para2.appendChild(a1);
+
+  cardInfo.appendChild(header3);
+  cardInfo.appendChild(paraClass);
+  cardInfo.appendChild(para1)
+  cardInfo.appendChild(para2)
 
   cards.appendChild(card)
 
